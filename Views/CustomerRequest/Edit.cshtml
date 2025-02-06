@@ -1,0 +1,50 @@
+﻿@model CustomerRequest
+
+@{
+    ViewData["Title"] = "Edytuj zapytanie";
+}
+
+<h2 class="text-center mt-4">✏ Edytuj zapytanie klienta</h2>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form asp-action="Edit" method="post">
+                <input type="hidden" asp-for="Id" />
+
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label">📛 Imię i nazwisko</label>
+                    <input asp-for="Name" class="form-control" placeholder="Wpisz imię i nazwisko">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label">📧 Adres e-mail</label>
+                    <input asp-for="Email" type="email" class="form-control" placeholder="Podaj e-mail">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Message" class="form-label">📝 Wiadomość</label>
+                    <textarea asp-for="Message" class="form-control" rows="4" placeholder="Treść zapytania"></textarea>
+                    <span asp-validation-for="Message" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="CreatedAt" class="form-label">📅 Data utworzenia</label>
+                    <input asp-for="CreatedAt" class="form-control" readonly>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <a asp-action="Index" class="btn btn-secondary">🔙 Powrót</a>
+                    <a asp-controller="Home" asp-action="Index" class="btn btn-outline-primary">🏠 Strona główna</a>
+                    <button type="submit" class="btn btn-primary">💾 Zapisz zmiany</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

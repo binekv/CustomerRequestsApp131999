@@ -1,0 +1,30 @@
+﻿@model CustomerRequest
+
+@{
+    ViewData["Title"] = "Dodaj nowe zapytanie";
+}
+
+<div class="container mt-4">
+    <h2>➕ Dodaj nowe zapytanie</h2>
+
+    <form asp-action="Create" method="post">
+        <div class="form-group">
+            <label>📛 Imię</label>
+            <input asp-for="Name" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label>📧 Email</label>
+            <input asp-for="Email" class="form-control" type="email" required />
+        </div>
+
+        <div class="form-group">
+            <label>📝 Wiadomość</label>
+            <textarea asp-for="Message" class="form-control" rows="3" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-success">✔ Zapisz</button>
+        <a asp-action="Index" class="btn btn-secondary">↩ Powrót</a>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-primary">🏠 Strona główna</a>
+    </form>
+</div>

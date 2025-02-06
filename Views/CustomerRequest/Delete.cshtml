@@ -1,0 +1,33 @@
+﻿@model CustomerRequest
+
+@{
+    ViewData["Title"] = "Usuń zapytanie";
+}
+
+<div class="container mt-4">
+    <h2 class="text-danger">⚠ Czy na pewno chcesz usunąć to zapytanie?</h2>
+    <hr />
+
+    <dl class="row">
+        <dt class="col-sm-3">📛 Imię:</dt>
+        <dd class="col-sm-9">@Model.Name</dd>
+
+        <dt class="col-sm-3">📧 Email:</dt>
+        <dd class="col-sm-9">@Model.Email</dd>
+
+        <dt class="col-sm-3">📝 Wiadomość:</dt>
+        <dd class="col-sm-9">@Model.Message</dd>
+
+        <dt class="col-sm-3">📅 Data utworzenia:</dt>
+        <dd class="col-sm-9">@Model.CreatedAt.ToString("dd.MM.yyyy HH:mm")</dd>
+    </dl>
+
+    <form asp-action="Delete" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" asp-for="Id" />
+
+        <button type="submit" class="btn btn-danger">🗑 Usuń</button>
+        <a asp-action="Index" class="btn btn-secondary">↩ Powrót</a>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-primary">🏠 Strona główna</a>
+    </form>
+</div>

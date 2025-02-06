@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Strona Główna";
+}
+
+<div class="container mt-5">
+    <div class="text-center">
+        <h1 class="display-4">📞 System Zarządzania Zapytaniami Klientów</h1>
+        <p class="lead">Proste i intuicyjne zarządzanie zgłoszeniami klientów.</p>
+
+        <div class="d-flex justify-content-center mt-4">
+            <a asp-controller="CustomerRequest" asp-action="Index" class="btn btn-primary btn-lg">
+                🔍 Przeglądaj zapytania klientów
+            </a>
+        </div>
+    </div>
+
+    <hr class="my-5">
+
+    <div class="row text-center">
+        <div class="col-md-4">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h5 class="card-title">📋 Zarządzaj zgłoszeniami</h5>
+                    <p class="card-text">Przeglądaj i zarządzaj wszystkimi zapytaniami klientów w jednym miejscu.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h5 class="card-title">📨 Dodaj nowe zapytanie</h5>
+                    <p class="card-text">Szybko dodawaj nowe zgłoszenia klientów.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h5 class="card-title">📊 Statystyki</h5>
+                    <p class="card-text">Monitoruj ilość zapytań i analizuj zgłoszenia.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
